@@ -8,7 +8,7 @@ type Props = {
 const SearchBox = ({ onSearch }: Props) => {
     const [username, setUsername] = useState<string>("")
     return (
-        <View className="flex flex-row items-center space-x-4 mx-auto mt-5 ">
+        <View className="flex flex-row items-center space-x-4 mx-auto mt-10 ">
             <TextInput
                 placeholder='Enter your usename here ...'
                 placeholderTextColor="#ffffff"
