@@ -3,8 +3,9 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 import SearchBox from './components/SearchBox';
 import User from './components/User';
 import { useCallback, useState } from 'react';
+import CardList from './components/CardList';
 
-type Data = {
+export type Data = {
   avatar_url: string,
   followers: string | number,
   following: string | number,
@@ -27,7 +28,10 @@ export default function App() {
       <ScrollView keyboardShouldPersistTaps="handled" className="h-screen p-4 mx-auto">
         <SearchBox onSearch={search} />
         {
-          data && <User src={data.avatar_url} username={data.login} />
+          data && (<>
+            <User src={data.avatar_url} username={data.login} />
+            <CardList data={data} />
+          </>)
         }
       </ScrollView>
     </View>

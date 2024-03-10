@@ -13,7 +13,7 @@ const SearchBox = ({ onSearch }: Props) => {
                 placeholder='Enter your usename here ...'
                 placeholderTextColor="#ffffff"
                 onChangeText={(text: string) => setUsername(text)}
-                className="border border-gray-100 p-2 w-2/3 text-gray-100"
+                className="border border-gray-100 p-2 w-2/3 text-gray-100 focus:border-2 focus:border-purple-500"
             />
             <Pressable className="bg-sky-500 px-4 py-2 rounded" onPress={() => onSearch(username)}>
                 <Text className="text-gray-50 ">search</Text>
