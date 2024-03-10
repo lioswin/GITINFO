@@ -1,20 +1,23 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import SearchBox from './components/SearchBox';
 
 export default function App() {
+  const search = (searchTerm: string) => {
+    if (searchTerm == "") {
+      alert("Please enter something")
+    }
+    fetch(`https:api.github.com/users/${searchTerm}`).then(res => res.json()).then(data=>{
+      console.log(data)
+    })
+  }
   return (
-    <View>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
+    <View className="bg-black flex-1">
+      <ScrollView keyboardShouldPersistTaps="handled" className="h-screen">
+        <SearchBox onSearch={search} />
+      </ScrollView>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
