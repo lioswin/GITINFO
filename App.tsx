@@ -4,14 +4,9 @@ import SearchBox from './components/SearchBox';
 import User from './components/User';
 import { useCallback, useState } from 'react';
 import CardList from './components/CardList';
+import { Data } from './types';
 
-export type Data = {
-  avatar_url: string,
-  followers: string | number,
-  following: string | number,
-  login: string,
-  public_repos: string | number
-}
+
 
 export default function App() {
   const [data, setData] = useState<Data>();

@@ -1,10 +1,9 @@
 import { View, Text } from 'react-native'
 import React from 'react'
-import { Data } from '../App'
+import { cardlistProps } from '../types'
 
-type Props = {
-    data: Data
-}
+
+
 
 const Card = ({ number, text, ...other }: { number: string|number, text: string }) => {
     return (
@@ -17,7 +16,7 @@ const Card = ({ number, text, ...other }: { number: string|number, text: string 
     )
 }
 
-const CardList = ({data}: Props) => {
+const CardList = ({data}: cardlistProps) => {
     return (
         <View className='flex flex-row flex-wrap gap-5 my-5 justify-center'>
             <Card text='Public repos' number={data.public_repos} className="bg-blue-500" />

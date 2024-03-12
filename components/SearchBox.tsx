@@ -1,11 +1,10 @@
 import { View, Text, TextInput, Pressable } from 'react-native'
 import React, { useState } from 'react'
+import { searchProps } from '../types'
 
-type Props = {
-    onSearch: Function
-}
 
-const SearchBox = ({ onSearch }: Props) => {
+
+const SearchBox = ({ onSearch }: searchProps) => {
     const [username, setUsername] = useState<string>("")
     return (
         <View className="flex flex-row items-center space-x-4 mx-auto mt-10 ">
