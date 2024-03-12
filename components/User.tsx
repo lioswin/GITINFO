@@ -1,7 +1,7 @@
 import { View, Text, Image } from 'react-native'
 import React from 'react'
 
-type Props = {
+type Props = { // you can rename this as userProp
     src: string,
     username: string
 }
